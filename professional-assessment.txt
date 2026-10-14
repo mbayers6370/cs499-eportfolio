@@ -1,0 +1,15 @@
+When I first started my classes, I aimed to build projects that were quick to make and simple to use. Over time, through my projects and internship, I learned to look at software as a whole system and to think about how someone else might maintain what I build.
+
+Over the past year, I have become more interested in frontend engineering and user experience. Building real apps has shown me that a good user interface needs both technical skill and a focus on people. The best interfaces aren't just attractive; they are also easy to understand and use.
+
+For my capstone, I went back to an Android scheduling app I first built in CS 360. I reviewed my earlier work and found ways to improve its structure, scheduling features, and how well the database works.
+
+To improve my software design, I separated different parts of the app and moved the main logic into ViewModels. This made the code more organized and each part easier to understand and update. It also showed me how important it is to use the right tools and methods so software can change over time without breaking what already works.
+
+To improve algorithms and data structures, I added a way to spot overlapping events using interval-based conflict checks, while still allowing back-to-back appointments. I looked at what the app needed, tested edge cases, and used automated tests to make sure everything worked as expected. This showed I can choose and test algorithms based on what is correct, efficient, and practical for the app, without making things more complicated than needed.
+
+For the database, I worked on how records are connected, keeping data accurate, and handling changes to the structure. By adding foreign keys, indexes, cascading deletes, and clear migrations, I made the app better at managing related data. This also helped me think more about security, like who owns the data, what happens if something is deleted by mistake, and how changes affect stored information. I understand that keeping data consistent is just one part of making software secure, and it does not replace things like authentication or authorization.
+
+Besides the technical work, my internship let me work with others on website and app interfaces and explain design choices in a team setting. I learned that good teamwork means listening to different views, explaining technical decisions clearly, and building solutions that help everyone reach their goals. My code review video, written project summaries, and this ePortfolio show that I can share technical information in different ways: speaking, writing, and visuals.
+
+All of these experiences have helped me grow in how I approach computer science. Looking ahead, I want to use these skills in frontend engineering, user experience, and human-computer interaction, where good design and dependable software both matter.

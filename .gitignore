@@ -1,8 +1,0 @@
-.DS_Store
-
-# Android Studio and Gradle local/build output
-artifacts/Scheduler/.gradle/
-artifacts/Scheduler/.idea/
-artifacts/Scheduler/app/build/
-artifacts/Scheduler/build/
-artifacts/Scheduler/local.properties

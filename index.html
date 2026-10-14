@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Matthew Bayers — CS 499 Computer Science Capstone ePortfolio, Southern New Hampshire University." />
+    <title>CS 499 — Matthew Bayers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&family=Jost:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20261013-2" />
+</head>
+
+<body>
+    <div class="nav-shell">
+        <div class="wrap">
+            <nav class="nav" aria-label="Main navigation">
+                <a class="brand" href="#top">MB / CS 499</a><a href="#assessment">Assessment</a><a href="#review">Code
+                    review</a><a href="#enhancements">Enhancements</a><a href="#application">Application</a><a
+                    href="#artifacts">Artifacts</a>
+            </nav>
+        </div>
+    </div>
+    <div class="wrap">
+        <main id="top">
+            <header class="hero">
+                <div class="eyebrow">
+                    Southern New Hampshire University / Computer Science / 2026
+                </div>
+                <h1>Built.<br /><span>Rebuilt.</span><br />Refined.</h1>
+                <p class="lede">
+                    A computer science capstone documenting the evolution of an Android
+                    scheduling application from a functional prototype to a more
+                    thoughtfully structured system.
+                </p>
+                <div class="hero-foot">
+                    <span class="eyebrow">Matthew Bayers</span><span class="eyebrow">CS 499 / ePortfolio</span </div>
+            </header>
+            <section id="assessment">
+                <div class="section-head">
+                    <span class="eyebrow">01 / Professional reflection</span>
+                    <h2>Professional<br />self-assessment.</h2>
+                </div>
+                <div class="content">
+                    <div id="assessment-content" class="assessment-prose" aria-busy="true">Loading professional assessment…</div>
+                    <div class="outcomes">
+                        <div class="outcome">
+                            <span class="eyebrow">Outcome 01</span><strong>Collaboration</strong>
+                            <p>
+                                Working across design and development contexts and considering
+                                the needs of multiple audiences.
+                            </p>
+                        </div>
+                        <div class="outcome">
+                            <span class="eyebrow">Outcome 02</span><strong>Communication</strong>
+                            <p>
+                                Presenting decisions through a code review, narratives, and a
+                                navigable portfolio.
+                            </p>
+                        </div>
+                        <div class="outcome">
+                            <span class="eyebrow">Outcome 03</span><strong>Algorithms</strong>
+                            <p>
+                                Using interval comparisons and boundary-case tests to solve
+                                scheduling conflicts.
+                            </p>
+                        </div>
+                        <div class="outcome">
+                            <span class="eyebrow">Outcome 04</span><strong>Tools and techniques</strong>
+                            <p>
+                                Applying Android architecture, Room migrations, and automated
+                                testing to improve an existing app.
+                            </p>
+                        </div>
+                        <div class="outcome">
+                            <span class="eyebrow">Outcome 05</span><strong>Security mindset</strong>
+                            <p>
+                                Considering data ownership, relational integrity, and the
+                                consequences of data changes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="review">
+                <div class="section-head">
+                    <span class="eyebrow">02 / Baseline review</span>
+                    <h2>Before the<br />enhancements.</h2>
+                </div>
+                <div class="content">
+                    <p>
+                        The recorded code review examines the original scheduling
+                        application and identifies opportunities for improvement across
+                        software design, algorithms, and database management.
+                    </p>
+                    <div class="video">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/2tUN9hrWc_o?si=1hlSdwzYVECPs0RV"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="links">
+                        <a href="https://youtu.be/2tUN9hrWc_o" target="_blank" rel="noopener noreferrer">Watch on
+                            YouTube<ion-icon name="logo-youtube" aria-hidden="true"></ion-icon></a>
+                    </div>
+                </div>
+            </section>
+            <section id="enhancements">
+                <div class="section-head">
+                    <span class="eyebrow">03 / Three enhancements</span>
+                    <h2>Engineering<br />the improvements.</h2>
+                </div>
+                <div class="projects">
+                    <article class="project">
+                        <span class="index">01 / Design</span>
+                        <div>
+                            <div class="eyebrow">
+                                Milestone Two / Software Design & Engineering
+                            </div>
+                            <h3>Structure that can grow.</h3>
+                            <p>
+                                Refactored oversized components and separated
+                                responsibilities, including moving logic into ViewModels. The
+                                goal was clearer maintainability and easier future development
+                                without changing the application's intended behavior.
+                            </p>
+                            <div class="links">
+                                <a href="narratives/Milestone_Two_Software_Engineering.docx" download>Download
+                                    narrative<ion-icon name="download-outline" aria-hidden="true"></ion-icon></a><a
+                                    href="https://github.com/mbayers6370/scheduler"
+                                    target="_blank" rel="noopener noreferrer">View repository<ion-icon
+                                        name="open-outline" aria-hidden="true"></ion-icon></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project">
+                        <span class="index">02 / Logic</span>
+                        <div>
+                            <div class="eyebrow">
+                                Milestone Three / Algorithms & Data Structures
+                            </div>
+                            <h3>Time, without conflicts.</h3>
+                            <p>
+                                Introduced interval-overlap detection using
+                                <code>startA &lt; endB &amp;&amp; startB &lt; endA</code>. The
+                                logic catches overlapping and nested events while allowing
+                                events to begin exactly when another ends.
+                            </p>
+                            <div class="links">
+                                <a href="narratives/Milestone_Three_Algorithms.docx" download>Download
+                                    narrative<ion-icon name="download-outline" aria-hidden="true"></ion-icon></a><a
+                                    href="https://github.com/mbayers6370/scheduler"
+                                    target="_blank" rel="noopener noreferrer">View repository<ion-icon
+                                        name="open-outline" aria-hidden="true"></ion-icon></a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project">
+                        <span class="index">03 / Data</span>
+                        <div>
+                            <div class="eyebrow">Milestone Four / Databases</div>
+                            <h3>Integrity by design.</h3>
+                            <p>
+                                Strengthened the Room database with foreign-key relationships,
+                                indexes, cascading deletion, and explicit migrations.
+                                Migration testing helped verify that existing records and
+                                collection relationships remained intact.
+                            </p>
+                            <div class="links">
+                                <a href="narratives/Milestone_Four_Databases.docx" download>Download narrative<ion-icon
+                                        name="download-outline" aria-hidden="true"></ion-icon></a><a
+                                    href="https://github.com/mbayers6370/scheduler"
+                                    target="_blank" rel="noopener noreferrer">View repository<ion-icon
+                                        name="open-outline" aria-hidden="true"></ion-icon></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <section id="application">
+                <div class="section-head">
+                    <span class="eyebrow">04 / The application</span>
+                    <h2>Designed to make<br />time feel simple.</h2>
+                </div>
+                <div class="content application-copy">
+                    <p>
+                        A look at the enhanced Android Scheduler, from organizing events to managing collections.
+                    </p>
+                </div>
+                <div class="app-gallery" aria-label="Scheduler application screenshots">
+                    <figure>
+                        <img src="images/Home.png" alt="Scheduler application home screen" />
+                        <figcaption>01 / Schedule</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/Events.png" alt="Scheduler application events screen" />
+                        <figcaption>02 / Event details</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/Collections.png" alt="Scheduler application collections screen" />
+                        <figcaption>03 / Collections</figcaption>
+                    </figure>
+                </div>
+            </section>
+            <section id="artifacts">
+                <div class="section-head">
+                    <span class="eyebrow">05 / Evidence and files</span>
+                    <h2>Explore the<br />source.</h2>
+                </div>
+                <div class="content">
+                    <p>
+                        The Scheduler repository contains the Android application and its
+                        enhancements. The three downloadable Word narratives above explain
+                        the design decisions, challenges, and learning associated with
+                        each milestone.
+                    </p>
+                    <div class="source-grid">
+                        <div class="source">
+                            <span class="eyebrow">Enhanced application</span>
+                            <h3>Scheduler / Kotlin / Compose / Room</h3>
+                            <p>
+                                <a class="button"
+                                    href="https://github.com/mbayers6370/scheduler"
+                                    target="_blank" rel="noopener noreferrer">Open enhanced source<ion-icon
+                                        name="open-outline" aria-hidden="true"></ion-icon></a>
+                            </p>
+                        </div>
+                        <div class="source">
+                            <span class="eyebrow">Original application</span>
+                            <h3>Scheduler / CS 360 source</h3>
+                            <p>
+                                <a class="button" href="artifacts/Scheduler-Original-CS360.zip" download>Download
+                                    original source<ion-icon name="download-outline" aria-hidden="true"></ion-icon></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <span>© 2026 Matthew Bayers</span><span>Southern New Hampshire University · CS 499</span><a href="#top">Back
+                to top<ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon></a>
+        </footer>
+    </div>
+    <script>
+        fetch("professional-assessment.txt")
+            .then((response) => {
+                if (!response.ok) throw new Error("Assessment could not be loaded.");
+                return response.text();
+            })
+            .then((markup) => {
+                const assessment = document.getElementById("assessment-content");
+                assessment.textContent = markup.trim();
+                assessment.removeAttribute("aria-busy");
+            })
+            .catch(() => {
+                const assessment = document.getElementById("assessment-content");
+                assessment.textContent = "The professional assessment could not be loaded.";
+                assessment.removeAttribute("aria-busy");
+            });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
+
