@@ -1,3 +1,7 @@
+/* --------------------------------------------------------------------------
+   Foundation
+   -------------------------------------------------------------------------- */
+
 :root {
   --bg: #e0e1da;
   --ink: #474f09;
@@ -42,6 +46,10 @@ a:focus-visible {
   letter-spacing: 0.16em;
   font-size: 11px;
 }
+/* --------------------------------------------------------------------------
+   Site navigation
+   -------------------------------------------------------------------------- */
+
 .nav-shell {
   position: sticky;
   top: 0;
@@ -72,10 +80,19 @@ a:focus-visible {
 .menu-toggle {
   display: none;
 }
+/* --------------------------------------------------------------------------
+   Shared section layout
+   -------------------------------------------------------------------------- */
+
 .hero,
 section {
   position: relative;
 }
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
 .hero {
   z-index: 0;
   padding: 100px 0 90px;
@@ -150,36 +167,75 @@ section {
   padding: 82px 0;
 }
 .section-head {
-  display: grid;
-  grid-template-columns: 210px 1fr;
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
   margin-bottom: 40px;
 }
 .section-head h2 {
-  font-size: clamp(38px, 5vw, 68px);
+  font-size: clamp(21px, 5vw, 68px);
   letter-spacing: -0.065em;
   line-height: 1.05;
   margin: 0;
+  white-space: nowrap;
 }
 .content {
   max-width: 760px;
-  margin-left: auto;
-}
-#assessment .content,
-#review .content,
-#artifacts .content {
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 .content p {
   font-size: 17px;
 }
+/* --------------------------------------------------------------------------
+   01 / Professional assessment
+   -------------------------------------------------------------------------- */
+
 .assessment-prose {
   font-size: 17px;
-  line-height: 1.8;
-  white-space: pre-line;
+  line-height: 1.65;
+  max-width: 70ch;
+  margin-inline: auto;
 }
-#assessment .content > p {
-  line-height: 1.8;
+#assessment .content {
+  max-width: none;
+}
+.assessment-prose p {
+  margin: 0;
+}
+.assessment-lead {
+  font-weight: 500;
+}
+.assessment-group + .assessment-group {
+  margin-top: 40px;
+}
+.assessment-subheading {
+  margin: 0 0 12px;
+  color: var(--olive);
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.assessment-paragraphs {
+  display: grid;
+  gap: 20px;
+}
+.assessment-pullquote {
+  margin: 24px 0 0;
+  padding: 4px 0 4px 28px;
+  border-left: 3px solid var(--olive);
+  font-family: "Jost", sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+#assessment .section-head {
+  margin-bottom: 32px;
 }
 strong {
   font-weight: 500;
@@ -187,11 +243,29 @@ strong {
 .muted {
   color: var(--muted);
 }
+.outcomes-intro {
+  max-width: 760px;
+  margin-top: 48px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.outcomes-intro h3 {
+  margin: 0;
+}
+.outcomes-intro p {
+  margin: 10px 0 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55;
+}
 .outcomes {
   display: grid;
+  max-width: 760px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 35px;
+  margin-top: 28px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .outcome {
   padding: 24px;
@@ -199,6 +273,11 @@ strong {
   border: 1px solid var(--olive);
   box-shadow: inset 0 5px 0 var(--olive);
   min-height: 160px;
+}
+@media (min-width: 701px) {
+  .outcome:last-child {
+    grid-column: 1 / -1;
+  }
 }
 .outcome strong {
   display: block;
@@ -212,6 +291,31 @@ strong {
   font-size: 14px;
   margin: 0;
 }
+/* --------------------------------------------------------------------------
+   02 / Code review
+   -------------------------------------------------------------------------- */
+
+#review {
+  z-index: 0;
+  color: var(--soft);
+}
+#review::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background: var(--olive);
+  transform: translateX(-50%);
+}
+#review::after {
+  border-color: rgb(255 255 255 / 0.48);
+}
+#review .eyebrow {
+  color: var(--soft);
+}
 .video {
   aspect-ratio: 16/9;
   background: var(--olive);
@@ -221,6 +325,39 @@ strong {
   height: 100%;
   border: 0;
 }
+#review .links {
+  justify-content: center;
+}
+#review .links a {
+  border-color: var(--soft);
+  color: var(--soft);
+}
+#review .links a:hover {
+  background: var(--soft);
+  color: var(--olive);
+}
+@media (min-width: 701px) {
+  #review .content,
+  #artifacts .content {
+    max-width: none;
+  }
+  #review .content > p,
+  #artifacts .content > p {
+    max-width: 760px;
+  }
+  #review .video {
+    width: min(100%, 760px);
+    margin-inline: auto;
+  }
+  #artifacts .source-grid {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+}
+/* --------------------------------------------------------------------------
+   03 / Enhancements
+   -------------------------------------------------------------------------- */
+
 .projects {
   display: grid;
   gap: 14px;
@@ -245,6 +382,23 @@ strong {
 }
 .project p {
   max-width: 730px;
+}
+@media (min-width: 701px) {
+  .project > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 24px;
+  }
+  .project > div > :not(.links) {
+    grid-column: 1;
+  }
+  .project > div > .links {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self: end;
+    justify-self: end;
+    margin-top: 0;
+  }
 }
 .links {
   display: flex;
@@ -271,23 +425,33 @@ ion-icon {
   background: var(--olive);
   color: var(--soft);
 }
-.source {
-  display: flex;
-  flex-direction: column;
-  background: var(--soft);
-  padding: 32px;
-  border: 1px solid var(--olive);
-  box-shadow: inset 0 5px 0 var(--olive);
+/* --------------------------------------------------------------------------
+   04 / The application
+   -------------------------------------------------------------------------- */
+
+#application {
+  z-index: 0;
+  color: var(--soft);
 }
-.source-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 28px;
+#application::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background: var(--olive);
+  transform: translateX(-50%);
+}
+#application::after {
+  border-color: rgb(255 255 255 / 0.48);
+}
+#application .eyebrow {
+  color: var(--soft);
 }
 .application-copy {
-  margin-left: 240px;
-  margin-right: 0;
+  margin-left: 0;
   margin-bottom: 3rem;
 }
 .app-gallery {
@@ -302,7 +466,7 @@ ion-icon {
   min-width: 0;
   padding: 20px 20px 24px;
   background: var(--soft);
-  border: 1px solid var(--olive);
+  border: 1px solid var(--soft);
 }
 .app-gallery img {
   display: block;
@@ -312,6 +476,7 @@ ion-icon {
 }
 .app-gallery figcaption {
   padding-top: 18px;
+  color: var(--olive);
   font-family: "Jost", sans-serif;
   font-size: clamp(18px, 2.1vw, 30px);
   font-weight: 500;
@@ -320,15 +485,41 @@ ion-icon {
   text-align: center;
   text-transform: uppercase;
 }
+/* --------------------------------------------------------------------------
+   05 / Artifacts and source code
+   -------------------------------------------------------------------------- */
+
+.source {
+  display: flex;
+  flex-direction: column;
+  background: var(--soft);
+  padding: 32px;
+  border: 1px solid var(--olive);
+  box-shadow: inset 0 5px 0 var(--olive);
+}
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
 .source p {
   margin: auto 0 0;
   padding-top: 24px;
+}
+.source .button {
+  display: table;
+  margin-inline: auto;
 }
 .notice {
   border-left: 3px solid var(--olive);
   padding: 12px 20px;
   background: var(--soft);
 }
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
 .footer {
   padding: 42px 0 60px;
   display: flex;
@@ -337,6 +528,10 @@ ion-icon {
   flex-wrap: wrap;
   color: var(--muted);
 }
+/* --------------------------------------------------------------------------
+   Mobile adjustments
+   -------------------------------------------------------------------------- */
+
 @media (max-width: 700px) {
   .wrap {
     width: min(100% - 32px, 1120px);
@@ -423,10 +618,6 @@ ion-icon {
   .hero {
     padding: 65px 0;
   }
-  .section-head {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
   section {
     padding: 55px 0;
   }
@@ -437,11 +628,25 @@ ion-icon {
     grid-template-columns: 1fr;
   }
   .app-gallery {
-    grid-template-columns: 1fr;
-    max-width: 360px;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(100% - 44px);
+    gap: 14px;
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 16px 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
-  .application-copy {
-    margin-left: 0;
+  .app-gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .app-gallery figure {
+    scroll-snap-align: center;
   }
   .project {
     grid-template-columns: 1fr;
@@ -451,12 +656,30 @@ ion-icon {
   .links {
     justify-content: center;
   }
-  .source .button {
-    display: table;
-    margin-inline: auto;
-  }
   .hero-foot {
     gap: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  #assessment .section-head {
+    margin-bottom: 28px;
+  }
+  .assessment-prose {
+    line-height: 1.6;
+  }
+  .assessment-group + .assessment-group {
+    margin-top: 32px;
+  }
+  .assessment-subheading {
+    margin-bottom: 10px;
+  }
+  .assessment-paragraphs {
+    gap: 18px;
+  }
+  .assessment-pullquote {
+    margin-top: 20px;
+    padding-left: 20px;
   }
 }
 

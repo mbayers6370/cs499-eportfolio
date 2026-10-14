@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter:wght@300;400;500&family=Jost:wght@300;400;500;700;800;900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20261014-1" />
+    <link rel="stylesheet" href="styles.css?v=20261014-10" />
 </head>
 
 <body>
@@ -51,10 +51,14 @@
             <section id="assessment">
                 <div class="section-head">
                     <span class="eyebrow">01 / Professional reflection</span>
-                    <h2>Professional<br />self-assessment.</h2>
+                    <h2>Professional self-assessment.</h2>
                 </div>
                 <div class="content">
-                    <div id="assessment-content" class="assessment-prose" aria-busy="true">Loading professional assessment…</div>
+                    <article id="assessment-content" class="assessment-prose" aria-busy="true">Loading professional assessment…</article>
+                    <div class="outcomes-intro">
+                        <h3 class="eyebrow">Program outcomes</h3>
+                        <p>These outcomes connect my capstone enhancements and professional experiences to the skills developed throughout the Computer Science program.</p>
+                    </div>
                     <div class="outcomes">
                         <div class="outcome">
                             <span class="eyebrow">Outcome 01</span><strong>Collaboration</strong>
@@ -97,7 +101,7 @@
             <section id="review">
                 <div class="section-head">
                     <span class="eyebrow">02 / Baseline review</span>
-                    <h2>Before the<br />enhancements.</h2>
+                    <h2>Before the enhancements.</h2>
                 </div>
                 <div class="content">
                     <p>
@@ -121,7 +125,7 @@
             <section id="enhancements">
                 <div class="section-head">
                     <span class="eyebrow">03 / Three enhancements</span>
-                    <h2>Engineering<br />the improvements.</h2>
+                    <h2>Engineering the improvements.</h2>
                 </div>
                 <div class="projects">
                     <article class="project">
@@ -184,7 +188,7 @@
             <section id="application">
                 <div class="section-head">
                     <span class="eyebrow">04 / The application</span>
-                    <h2>Designed to make<br />time feel simple.</h2>
+                    <h2>Designed to make time feel simple.</h2>
                 </div>
                 <div class="content application-copy">
                     <p>
@@ -209,7 +213,7 @@
             <section id="artifacts">
                 <div class="section-head">
                     <span class="eyebrow">05 / Evidence and files</span>
-                    <h2>Explore the<br />source.</h2>
+                    <h2>Explore the source.</h2>
                 </div>
                 <div class="content">
                     <p>
@@ -274,7 +278,50 @@
             })
             .then((markup) => {
                 const assessment = document.getElementById("assessment-content");
-                assessment.textContent = markup.trim();
+                const pullQuote = "The best interfaces aren't just attractive; they are also easy to understand and use.";
+                const paragraphs = markup.trim().split(/\n\s*\n/);
+                const groups = [
+                    { label: "The evolution", start: 0, end: 2 },
+                    { label: "The engineering", start: 2, end: 6 },
+                    { label: "Looking forward", start: 6, end: 8 },
+                ];
+
+                assessment.replaceChildren();
+
+                groups.forEach(({ label, start, end }, index) => {
+                    const group = document.createElement("div");
+                    group.className = "assessment-group";
+
+                    const heading = document.createElement("h3");
+                    heading.className = "assessment-subheading";
+                    heading.textContent = label;
+                    group.append(heading);
+
+                    const body = document.createElement("div");
+                    body.className = "assessment-paragraphs";
+
+                    paragraphs.slice(start, end).forEach((paragraph, paragraphIndex) => {
+                        const text = index === 0 && paragraphIndex === 1
+                            ? paragraph.replace(` ${pullQuote}`, "")
+                            : paragraph;
+                        const element = document.createElement("p");
+                        if (paragraphIndex === 0) element.className = "assessment-lead";
+                        element.textContent = text;
+                        body.append(element);
+                    });
+
+                    group.append(body);
+
+                    if (index === 0) {
+                        const quote = document.createElement("blockquote");
+                        quote.className = "assessment-pullquote";
+                        quote.textContent = pullQuote;
+                        group.append(quote);
+                    }
+
+                    assessment.append(group);
+                });
+
                 assessment.removeAttribute("aria-busy");
             })
             .catch(() => {
